@@ -1,0 +1,25 @@
+{
+  "name": "js-canvas-clock",
+  "version": "1.0.0",
+  "description": "A simple 2D Clock-Builder whichs paints on the Canvas in pure JavaScript.",
+  "main": "src/Clock.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mteufel/js-canvas-clock.git"
+  },
+  "keywords": [
+    "js",
+    "clock",
+    "canvas",
+    "2d"
+  ],
+  "author": "Timo Teufel, Marc Teufel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mteufel/js-canvas-clock/issues"
+  },
+  "homepage": "https://github.com/mteufel/js-canvas-clock#readme"
+}
