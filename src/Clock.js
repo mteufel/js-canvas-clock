@@ -156,6 +156,9 @@ let Clock = (canvas, x, y, mode, settings, timeFunction) => {
     }
 
     return {
+        getSettings: () => _settings,
+        setX: (x) => _x = x,
+        setY: (y) => _y = y,
         clearCanvas: () => {
             _ctx.clearRect(0, 0, canvas.width, canvas.height)
         },
@@ -192,7 +195,7 @@ let ClockBuilder = () => {
     }
 
     return {
-        getSettings: () => settings,
+        getSettings: () => _settings,
         setCanvas: (canvas) => {
             _canvas = canvas
             return this
