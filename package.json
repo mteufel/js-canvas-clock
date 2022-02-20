@@ -1,6 +1,6 @@
 {
   "name": "js-canvas-clock",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "A simple 2D Clock-Builder whichs paints on the Canvas in pure JavaScript.",
   "main": "src/Clock.js",
   "scripts": {
