@@ -13,18 +13,13 @@
     <script type="module">
 
         // load the library
-        import { ClockBuilder, ClockSettings, ClockMode} from "../../src/Clock.js"
+        import { ClockBuilder, ClockSettings, ClockMode} from "https://cdn.jsdelivr.net/gh/mteufel/js-canvas-clock@1.0.0/src/Clock.js"
 
         // get the canvas
         let canvas = document.getElementById('canvas');
 
-        // tweak some settings
-        let settings = new ClockSettings()
-        settings.setEnableNumbers(true)
-        settings.setNumberSize(0.12)
-
         // create the clock
-        let clock = new ClockBuilder().setCanvas(canvas).setMode(ClockMode.CONTINOUS).setSettings(settings).build()
+        let clock = new ClockBuilder().setCanvas(canvas).build()
 
         function animate() {
             clock.clearCanvas();
@@ -41,7 +36,7 @@
         }
 
         window.addEventListener('resize', updateSize);
-        updateSize();
+        updateSize()
         requestAnimationFrame(animate);
 
     </script>

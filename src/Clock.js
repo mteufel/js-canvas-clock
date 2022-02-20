@@ -12,8 +12,8 @@ class ClockSettings {
         this.dashSizeSmall = 0.05
         this.dashSizeBig = 0.1
         this.dashOuterDistance = 0.05
-        this.enableNumbers = false
-        this.numberSize = 0.15
+        this.enableNumbers = true
+        this.numberSize = 0.12
         this.numberFont = 'sans-serif'
         this.numberOuterDistance = 0.25
         this.hourPointerLength = 0.60
@@ -22,6 +22,7 @@ class ClockSettings {
         this.secondPointerColor= '#1890FF'
         this.secondPointerWidth = 0.01
         this.dotRadius = 0.03
+
     }
 
     setRadius(value) {
@@ -49,6 +50,7 @@ class ClockSettings {
     }
 
     setEnableNumbers(value) {
+        console.log('aufgerufen', value)
         this.enableNumbers = value
     }
 
@@ -264,7 +266,7 @@ class Clock {
     }
 
     clearCanvas() {
-        this.ctx.clearRect(0, 0, canvas.width, canvas.height)
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
     }
 
     drawClock() {
