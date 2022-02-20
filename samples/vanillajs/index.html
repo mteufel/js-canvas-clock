@@ -5,17 +5,26 @@
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Clock in simple Vanilla JS</title>
-        <script type=module src="https://cdn.jsdelivr.net/gh/mteufel/js-canvas-clock/src/Clock.js"></script>
+        <title>Clock in simple Vanilla JS!</title>
     </head>
     <body>
         <canvas id="canvas" width="500" height="500" style="position: absolute; left: 0; top: 0; z-index: 0;"></canvas>
     </body>
-    <script>
-        import {ClockBuilder, ClockMode} from "../../src/Clock";
+    <script type="module">
 
+        // load the library
+        import { ClockBuilder, ClockSettings, ClockMode} from "../../src/Clock.js"
+
+        // get the canvas
         let canvas = document.getElementById('canvas');
-        let clock = ClockBuilder().setCanvas(canvas).setMode(ClockMode.CONTINOUS).build()
+
+        // tweak some settings
+        let settings = new ClockSettings()
+        settings.setEnableNumbers(true)
+        settings.setNumberSize(0.12)
+
+        // create the clock
+        let clock = new ClockBuilder().setCanvas(canvas).setMode(ClockMode.CONTINOUS).setSettings(settings).build()
 
         function animate() {
             clock.clearCanvas();
@@ -26,14 +35,14 @@
         function updateSize() {
             canvas.width = window.innerWidth * 0.9;
             canvas.height = window.innerHeight * 0.9;
-            clock
-            clock.setXPos(canvas.width / 2);
-            clock.setYPos(canvas.height / 2);
-            clock.setRadius(Math.min(canvas.width, canvas.height) * 0.45);
+            clock.setX(canvas.width / 2);
+            clock.setY(canvas.height / 2);
+            clock.getSettings().setRadius(Math.min(canvas.width, canvas.height) * 0.45);
         }
 
         window.addEventListener('resize', updateSize);
         updateSize();
         requestAnimationFrame(animate);
+
     </script>
 </html>
