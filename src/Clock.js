@@ -1,4 +1,8 @@
-import ClockMode from "./ClockMode";
+
+const ClockMode = {
+    JUMPING: 'jumping',
+    CONTINOUS: 'continous'
+}
 
 let ClockSettings = () => {
 
@@ -219,3 +223,4 @@ let ClockBuilder = () => {
     }
 }
 
+export { ClockMode, Clock, ClockSettings, ClockBuilder }
